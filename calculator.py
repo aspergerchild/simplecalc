@@ -12,6 +12,10 @@ def divide(a, b):
         return "Ошибка: деление на ноль!"
     return a / b
 
+def power(a, b):
+    """Новая функция: возведение в степень"""
+    return a ** b
+
 def main():
     print("=== Простой Калькулятор ===")
     
@@ -24,8 +28,9 @@ def main():
         print("2. Вычитание (-)")
         print("3. Умножение (*)")
         print("4. Деление (/)")
+        print("5. Возведение в степень (**)")  # НОВАЯ ОПЦИЯ
         
-        choice = input("Введите номер операции (1-4): ")
+        choice = input("Введите номер операции (1-5): ")
         
         if choice == '1':
             result = add(a, b)
@@ -39,11 +44,14 @@ def main():
         elif choice == '4':
             result = divide(a, b)
             print(f"\n{a} / {b} = {result}")
+        elif choice == '5':  # НОВЫЙ КЕЙС
+            result = power(a, b)
+            print(f"\n{a} ** {b} = {result}")
         else:
-            print("Ошибка: выберите операцию от 1 до 4")
+            print("Ошибка: выберите операцию от 1 до 5")
             
     except ValueError:
         print("Ошибка! Введите числа корректно.")
 
 if __name__ == "__main__":
-    main() 
+    main()
